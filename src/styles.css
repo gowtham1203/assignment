@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+.container {
+    display: flex;
+    flex-direction: row; /* Ensure flex direction is row to position items side by side */
+  }
+  
+  .categories {
+    width: 20%;
+    margin-right: 20px;
+  }
+  
+  .results-section {
+    width: 80%;
+  }

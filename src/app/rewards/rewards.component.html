@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="categories">
+      <div *ngFor="let category of categories" class="category">
+        <div class="category-header" (click)="toggleCategory(category)">
+          <span>{{ category.name }}</span>
+          <span [class.expanded]="category.expanded">&#9660;</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="results-section">
+      <div class="results-header">
+        <h2>{{ sortedResults.length }} results found</h2>
+        <button class="sort-button" (click)="toggleSortPopup()">Sort</button>
+      </div>
+  
+      <div class="results">
+        <div *ngFor="let result of sortedResults" class="result-card">
+          <img [src]="result.image" alt="Reward image" class="result-image"/>
+          <div class="result-info">
+            <div class="out-of-stock" *ngIf="result.outOfStock">(Out of stock)</div>
+            <h3>{{ result.name }}</h3>
+            <p>{{ result.points }} Points</p>
+            <p *ngIf="result.validUntil">Valid Until: {{ result.validUntil }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Sort Popup -->
+    <div class="sort-popup" *ngIf="showSortPopup">
+      <button (click)="sortRewards('asc')">Sort A to Z</button>
+      <button (click)="sortRewards('desc')">Sort Z to A</button>
+    </div>
+  </div>

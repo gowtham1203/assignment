@@ -1,0 +1,12 @@
+div{
+    padding-right: 200px;
+    background-color: red;
+}
+div img{
+    width: 70px;
+    padding-right: 50px;
+    align-content: center;
+}
+i{
+    float: right;
+}
